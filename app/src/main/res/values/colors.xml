@@ -6,4 +6,5 @@
     <color name="ticket_background">#33adff</color>
     <color name="White">#ffffff</color>
     <color name="gray"> #d1d1e0</color>
+    <color name="black">#000000</color>
 </resources>

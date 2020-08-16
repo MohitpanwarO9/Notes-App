@@ -1,11 +1,17 @@
 package com.example.mynotes
 
+import android.app.SearchManager
+import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.SearchView
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.ticket.view.*
 
@@ -25,6 +31,28 @@ class MainActivity : AppCompatActivity() {
 
         var myNotesAdapter=MyNotesAdapter(listNotes)
             notes_list.adapter=myNotesAdapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu,menu)
+
+        val sv=menu!!.findItem(R.id.app_bar_search).actionView as SearchView
+        val sm=getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when(item.itemId){
+            R.id.addNotes->{
+                    val intent=Intent(this,AddNotes::class.java)
+                        startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 

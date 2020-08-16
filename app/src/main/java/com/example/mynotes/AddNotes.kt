@@ -1,0 +1,17 @@
+package com.example.mynotes
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import kotlinx.android.synthetic.main.activity_add_notes.*
+
+class AddNotes : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_add_notes)
+
+        addNotes_Bt.setOnClickListener {
+            finish()
+        }
+
+    }
+}
