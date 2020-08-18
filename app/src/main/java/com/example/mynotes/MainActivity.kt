@@ -3,6 +3,7 @@ package com.example.mynotes
 import android.app.SearchManager
 import android.content.Context
 import android.content.Intent
+import android.hardware.camera2.DngCreator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -12,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.SearchView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.ticket.view.*
 
@@ -23,14 +25,28 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // this is dummy data
+        loadQuery("%")
+    }
 
-        listNotes.add(Notes(1,"Aim","Today i have to do the coding practice and android notes project"))
-        listNotes.add(Notes(2,"complete","the goal of toady is to master sql lite for android and practice android skills"))
-        listNotes.add(Notes(3,"Aim","Today i have to do the coding practice and android notes project"))
+    private fun loadQuery(title:String) {
+        var dbManager=DbManager(this)
+        val projection= arrayOf("ID","Title","Description")
+        val selectionArg= arrayOf(title)
+        val cursor=dbManager.Query(projection,"Title like ?",selectionArg,"Title")
 
+        if(cursor.moveToFirst()){
+            listNotes.clear()
+            do{
+                 val ID=cursor.getInt(cursor.getColumnIndex("ID"))
+                val title=cursor.getString(cursor.getColumnIndex("Title"))
+                val des=cursor.getString(cursor.getColumnIndex("Description"))
+                listNotes.add(Notes(ID,title,des))
+
+            }while (cursor.moveToNext())
+        }
         var myNotesAdapter=MyNotesAdapter(listNotes)
-            notes_list.adapter=myNotesAdapter
+        notes_list.adapter=myNotesAdapter
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -38,7 +54,18 @@ class MainActivity : AppCompatActivity() {
 
         val sv=menu!!.findItem(R.id.app_bar_search).actionView as SearchView
         val sm=getSystemService(Context.SEARCH_SERVICE) as SearchManager
+            sv.setSearchableInfo(sm.getSearchableInfo(componentName))
+            sv.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    loadQuery("%"+ query +"%")
+                    Toast.makeText(applicationContext, query, Toast.LENGTH_SHORT).show()
+                    return false
+                }
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    return false
+                }
 
+            })
 
         return super.onCreateOptionsMenu(menu)
     }

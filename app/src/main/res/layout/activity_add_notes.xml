@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/addNotes_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/add_notes_text_background"
@@ -31,7 +31,7 @@
             android:textSize="19sp" />
 
         <EditText
-            android:id="@+id/editTextTextMultiLine"
+            android:id="@+id/addNotes_des"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:layout_marginTop="2dp"
@@ -50,9 +50,10 @@
         android:layout_marginStart="298dp"
         android:layout_marginTop="41dp"
         android:layout_marginEnd="26dp"
+        android:background="@drawable/add_notes_button"
+        android:onClick="buAdd"
         android:text="Add"
         android:textColor="@color/White"
-        android:background="@drawable/add_notes_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
