@@ -58,4 +58,14 @@ class DbManager {
         return cursor
     }
 
+    fun Delete(selection:String,selectionArg:Array<String>):Int{
+        val count=sqlDB!!.delete(dbTable,selection,selectionArg)
+        return count
+    }
+
+    fun Update(values:ContentValues,selection:String,selectionArg:Array<String>):Int{
+        val count=sqlDB!!.update(dbTable,values,selection,selectionArg)
+        return count
+    }
+
 }

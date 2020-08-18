@@ -28,6 +28,12 @@ class MainActivity : AppCompatActivity() {
         loadQuery("%")
     }
 
+    override fun onResume() {
+        super.onResume()
+        loadQuery("%")
+    }
+
+
     private fun loadQuery(title:String) {
         var dbManager=DbManager(this)
         val projection= arrayOf("ID","Title","Description")
@@ -44,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
             }while (cursor.moveToNext())
         }
-        var myNotesAdapter=MyNotesAdapter(listNotes)
+        var myNotesAdapter=MyNotesAdapter(this,listNotes)
         notes_list.adapter=myNotesAdapter
 
     }
@@ -85,8 +91,10 @@ class MainActivity : AppCompatActivity() {
 
     inner class MyNotesAdapter:BaseAdapter{
             var listNotesAdapter=ArrayList<Notes>()
-        constructor(listNotesAdapter:ArrayList<Notes>):super(){
+            var context:Context?=null
+        constructor(context: Context,listNotesAdapter:ArrayList<Notes>):super(){
             this.listNotesAdapter=listNotesAdapter
+            this.context=context
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -97,6 +105,15 @@ class MainActivity : AppCompatActivity() {
             myView.ticket_title.text=myNotes.noteTitle
             myView.ticket_des.text=myNotes.noteDes
 
+            myView.ticket_delete.setOnClickListener(View.OnClickListener {
+                var dbManager=DbManager(this.context!!)
+                val selectionArg= arrayOf(myNotes.noteId.toString())
+                dbManager.Delete("ID=?",selectionArg)
+                loadQuery("%")
+            })
+            myView.ticket_edit.setOnClickListener(View.OnClickListener {
+                goToUpadate(myNotes)
+            })
             return myView
         }
 
@@ -113,6 +130,14 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    fun goToUpadate(note:Notes){
+        val intent=Intent(this,AddNotes::class.java)
+        intent.putExtra("ID",note.noteId)
+        intent.putExtra("Title",note.noteTitle)
+        intent.putExtra("Des",note.noteDes)
+        startActivity(intent)
     }
 
 }
