@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">मेरी टिप्पणियाँ</string>
+    <string name="title">शीर्षक</string>
+    <string name="des">अपना दैनिक कार्य लिखें</string>
+    <string name="add_button">जोड़ें</string>
+</resources>
