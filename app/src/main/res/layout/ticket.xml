@@ -20,16 +20,20 @@
             android:id="@+id/ticket_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Title"
+            android:text="@string/title"
+            android:textColor="@color/ticket_background"
+            android:textStyle="bold"
             android:textSize="21sp" />
 
         <TextView
             android:id="@+id/ticket_des"
+            android:paddingLeft="15dp"
+            android:paddingRight="2dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quick six blind smart out burst. Perfectly on furniture dejection determine my
-            "
-            android:textSize="15sp" />
+            android:text="hello dshajd ashdsahkdsa dsahdkahkd sadh jhhvcd cdjhcd cnjdns "
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
 
         <LinearLayout
             android:layout_width="match_parent"
