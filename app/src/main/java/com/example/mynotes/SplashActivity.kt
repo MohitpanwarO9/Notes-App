@@ -15,7 +15,8 @@ class SplashActivity : AppCompatActivity() {
                 try {
                     Thread.sleep(4000)
 
-                    val intent= Intent(baseContext,MainActivity::class.java)
+                    val intent= Intent(baseContext,HomeActivity::class.java)
+                    intent.flags=Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                     startActivity(intent)
                 }catch (e:Exception){
                     e.printStackTrace()

@@ -3,4 +3,5 @@
     <string name="title">Title</string>
     <string name="des">Write your Daily task</string>
     <string name="add_button">ADD</string>
+    <string name="add_notes">Write your new note </string>
 </resources>
