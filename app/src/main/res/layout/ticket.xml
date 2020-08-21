@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:layout_margin="8dp"
     android:background="@color/White"
     >
 
@@ -12,7 +13,6 @@
         android:background="@drawable/ticket_background"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -29,9 +29,10 @@
             android:id="@+id/ticket_des"
             android:paddingLeft="15dp"
             android:paddingRight="2dp"
+            android:maxLines="2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="hello dshajd ashdsahkdsa dsahdkahkd sadh jhhvcd cdjhcd cnjdns "
+            android:text="hel djnfjksdf fjdnsfjnsjdf njf fndj fsjf fjffjds fdjsbfjs dfjsjfndsf sdjfjsdfn fdjsnfjsnfdjnf"
             android:textSize="15sp"
             android:textColor="@color/black"/>
 

@@ -4,6 +4,6 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/ticket_background</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/ticket_background</item>
     </style>
-
 </resources>

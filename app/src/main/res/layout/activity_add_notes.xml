@@ -7,7 +7,6 @@
     tools:context=".AddNotes"
     android:layout_gravity="center"
     android:background="@color/White">
-
     <view
         android:id="@+id/view2"
         class="androidx.appcompat.widget.AppCompatImageView"
@@ -41,6 +40,7 @@
             android:background="@drawable/add_notes_text_background"
             android:ems="10"
             android:hint="@string/title"
+            android:textColor="@color/black"
             android:inputType="textPersonName"
             android:padding="8dp"
             android:textSize="19sp" />
@@ -51,6 +51,7 @@
             android:layout_height="150dp"
             android:layout_marginTop="2dp"
             android:autofillHints=""
+            android:textColor="@color/black"
             android:textColorHint="@color/hintColor"
             android:background="@drawable/add_notes_text_background"
             android:ems="10"
