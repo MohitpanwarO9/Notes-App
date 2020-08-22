@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddNotes" android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
     </application>
 
 </manifest>
