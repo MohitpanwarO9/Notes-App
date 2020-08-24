@@ -26,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         loadQuery("%")
+
+        addNotes_Bt_new.setOnClickListener{
+            val intent=Intent(this,AddNotes::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {

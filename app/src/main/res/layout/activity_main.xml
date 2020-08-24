@@ -1,71 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/White"
+    >
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/appbarLayout"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-       >
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:contentScrim="@color/ticket_background"
-            app:title="@string/app_name"
-            >
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:src="@drawable/stud"
-                android:scaleType="centerCrop"/>
-
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                />
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    <ImageView
+        android:id="@+id/main_image"
+        android:layout_width="408dp"
+        android:layout_height="236dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/stud"
+        android:scaleType="centerCrop"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addNotes_Bt_new"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_note_add"
-        app:layout_anchor="@id/appbarLayout"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="24dp"
+        app:layout_anchor="@id/main_image"
         app:layout_anchorGravity="bottom|right|end"
-        android:layout_marginEnd="32dp"/>
+        app:layout_constraintEnd_toStartOf="@+id/newSearch"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_note_add" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/newSearch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_search_black_24dp"
+        android:layout_marginTop="208dp"
+        android:layout_marginEnd="16dp"
         android:tint="@color/White"
-        app:layout_anchor="@id/appbarLayout"
+        app:layout_anchor="@id/main_image"
         app:layout_anchorGravity="bottom|right|end"
-        android:layout_marginRight="100dp"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_search_black_24dp" />
 
-<androidx.core.widget.NestedScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    >
     <ListView
         android:id="@+id/notes_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/White"
-         />
+        android:layout_height="413dp"
+        android:layout_marginBottom="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_image" />
 
-</androidx.core.widget.NestedScrollView>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
