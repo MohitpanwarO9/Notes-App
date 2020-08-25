@@ -31,6 +31,23 @@ class MainActivity : AppCompatActivity() {
             val intent=Intent(this,AddNotes::class.java)
             startActivity(intent)
         }
+
+        val sv=newSearch as SearchView
+        val sm=getSystemService(Context.SEARCH_SERVICE) as SearchManager
+            sv.setSearchableInfo(sm.getSearchableInfo(componentName))
+            sv.setOnQueryTextListener(object:SearchView.OnQueryTextListener{
+                override fun onQueryTextSubmit(query: String?): Boolean {
+                    loadQuery("%"+ query +"%")
+                    Toast.makeText(applicationContext, query, Toast.LENGTH_SHORT).show()
+                    return false
+                }
+                override fun onQueryTextChange(newText: String?): Boolean {
+                    return false
+                }
+
+            })
+
+
     }
 
     override fun onResume() {

@@ -13,7 +13,6 @@
         android:id="@+id/main_image"
         android:layout_width="403dp"
         android:layout_height="234dp"
-        android:contentDescription="TODO"
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,8 +28,7 @@
         android:background="@drawable/search_background"
         android:searchIcon="@drawable/ic_search_black_24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:targetApi="lollipop">
+        app:layout_constraintTop_toTopOf="parent" >
 
     </SearchView>
 
