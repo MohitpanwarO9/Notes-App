@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">माझ्या टिपा</string>
+    <string name="title">शीर्षक</string>
+    <string name="des">आपले दैनंदिन कार्य लिहा</string>
+    <string name="add_button">जोडा</string>
+    <string name="add_notes">Write your new note </string>
+</resources>

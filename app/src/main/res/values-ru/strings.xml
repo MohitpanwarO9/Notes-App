@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Мои заметки</string>
+    <string name="title">заглавие</string>
+    <string name="des">Напишите свою ежедневную задачу</string>
+    <string name="add_button">ДОБАВИТЬ</string>
+    <string name="add_notes">Write your new note </string>
+</resources>

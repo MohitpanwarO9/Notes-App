@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mes notes</string>
+    <string name="title">Titre</string>
+    <string name="des">Écrivez votre tâche quotidienne</string>
+    <string name="add_button">AJOUTER</string>
+    <string name="add_notes">Write your new note </string>
+</resources>
