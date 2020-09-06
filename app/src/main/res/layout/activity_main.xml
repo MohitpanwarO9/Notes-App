@@ -22,13 +22,13 @@
 
     <SearchView
         android:id="@+id/newSearch"
-        android:layout_width="315dp"
-        android:layout_height="34dp"
+        android:layout_width="290dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="80dp"
         android:background="@drawable/search_background"
         android:searchIcon="@drawable/ic_search_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="lollipop">
 
